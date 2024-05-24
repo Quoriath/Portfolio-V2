@@ -94,71 +94,71 @@ export default {
     </article>
   </div>
 
-<div class="px-5 py-5 md:px-12 md:py-10 text-left text-white mx-3">
-  <article data-page="about">
-    <header>
-      <div class="text-4xl font-extrabold text-white mb-5 fadein-bot title-section flex items-center justify-center">
-        &nbsp; Skills
-      </div>
-    </header>
-    <section>
-      <div>
-        <ul class="flex flex-wrap justify-center text-sm font-medium text-center text-gray-400 mb-5">
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white"
-              :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
-          </li>
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white"
-              :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Languages</button>
-          </li>
-        </ul>
-      </div>
-      <div v-show="activeTab === 1">
-        <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-          <div v-for="item in tech" :key="item.id">
-            <div
-              class="item-tech flex flex-col items-center cursor-pointer gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3">
-              <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                <img :alt="item.name" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                  class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
-                  :src="item.imageUrl" style="color: transparent;">
-              </div>
-              <div class="flex flex-col items-center text-sm md:text-base lg:text-lg">
-                <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-white mx-3">
+    <article data-page="about">
+      <header>
+        <div class="text-4xl font-extrabold text-white mb-5 fadein-bot title-section flex items-center justify-center">
+          &nbsp; Skills
+        </div>
+      </header>
+      <section>
+        <div>
+          <ul class="flex flex-wrap justify-center text-sm font-medium text-center text-gray-400 mb-5">
+            <li class="mr-2">
+              <button class="inline-block px-4 py-3 rounded-lg hover:text-white transition-all duration-300"
+                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
+            </li>
+            <li class="mr-2">
+              <button class="inline-block px-4 py-3 rounded-lg hover:text-white transition-all duration-300"
+                :class="{ 'text-blue-400 bg-blue-400 bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Languages</button>
+            </li>
+          </ul>
+        </div>
+        <div v-show="activeTab === 1">
+          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+            <div v-for="item in tech" :key="item.id">
+              <div
+                class="item-tech flex flex-col items-center cursor-pointer gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3 shadow-md transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                  <img :alt="item.name" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
+                    :src="item.imageUrl" style="color: transparent;">
                 </div>
-                <div
-                  class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
-                  {{ item.status }}</div>
+                <div class="flex flex-col items-center text-sm md:text-base lg:text-lg">
+                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+                  </div>
+                  <div
+                    class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
+                    {{ item.status }}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div v-show="activeTab === 2">
-        <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-          <div v-for="item in languages" :key="item.id">
-            <div
-              class="item-tech flex flex-col items-center cursor-pointer gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3">
-              <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                <img :alt="item.name" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                  class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
-                  :src="item.imageUrl" style="color: transparent;">
-              </div>
-              <div class="flex flex-col items-center text-sm md:text-base lg:text-lg">
-                <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+        <div v-show="activeTab === 2">
+          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+            <div v-for="item in languages" :key="item.id">
+              <div
+                class="item-tech flex flex-col items-center cursor-pointer gap-2 rounded border border-blue-400 px-2 py-2 hover:bg-blue-400 hover:bg-opacity-10 md:gap-3 lg:px-3 shadow-md transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                  <img :alt="item.name" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
+                    :src="item.imageUrl" style="color: transparent;">
                 </div>
-                <div
-                  class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
-                  {{ item.status }}</div>
+                <div class="flex flex-col items-center text-sm md:text-base lg:text-lg">
+                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+                  </div>
+                  <div
+                    class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
+                    {{ item.status }}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </article>
-</div>
+      </section>
+    </article>
+  </div>
 </template>
 
 <style scoped>
