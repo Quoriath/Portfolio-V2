@@ -2,7 +2,7 @@
   <main class="mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row md:gap-16 md:justify-center min-h-[65vh] md:min-h-[80vh] bg-dark">
     <div class="space-y-4 text-center md:text-left px-10 md:flex-1 md:pl-32">
       <p class="text-blue-300 text-lg fadein-up">Hello, I'm</p>
-      <h1 class="text-5xl font-extrabold md:text-11xl text-white fadein-up">Jonatan Firdausi</h1>
+      <h1 class="text-5xl font-extrabold md:text-8xl text-white fadein-up">Jonatan Firdausi</h1>
       <div class="py-2">
         <h1 class="typewrite text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-500 md:text-3xl fadein-up" ref="typewriter">
           <span class="wrap">{{ txt }}</span>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="flex justify-center md:justify-start fadein-right md:flex-1">
-      <img alt="avatar" fetchpriority="high" width="400" height="400" decoding="async" data-nimg="1" class="w-10/12 md:w-9/12 md:h-auto rounded-full border-4 border-blue-300 pict shadow-lg glow-blue" :src="require('@/assets/Photo.jpg')">    
+      <img alt="avatar" fetchpriority="high" width="400" height="400" decoding="async" data-nimg="1" class="w-8/12 md:w-6/12 lg:w-4/12 md:h-auto rounded-full border-4 border-blue-300 pict shadow-lg glow-blue" :src="require('@/assets/Photo.jpg')">    
     </div>
   </main>
 </template>
