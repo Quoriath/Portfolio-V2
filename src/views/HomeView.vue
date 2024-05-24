@@ -57,155 +57,155 @@ export default {
       let that = this;
       let delta = 200 - Math.random() * 100;
 
-      if (this.isDeleting) {
-        delta /= 2;
-      }
+if (this.isDeleting) {
+  delta /= 2;
+}
 
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
+if (!this.isDeleting && this.txt === fullTxt) {
+  delta = this.period;
+  this.isDeleting = true;
+} else if (this.isDeleting && this.txt === '') {
+  this.isDeleting = false;
+  this.loopNum++;
+  delta = 500;
+}
 
-      setTimeout(() => {
-        that.tick();
-      }, delta);
-    },
-  }
+setTimeout(() => {
+  that.tick();
+}, delta);
+},
+}
 }
 </script>
 
 <style>
 body {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background: #121212;
-  font-family: 'Poppins', sans-serif;
+overflow-y: scroll;
+overflow-x: hidden;
+background: #121212;
+font-family: 'Poppins', sans-serif;
 }
 
 .typewrite>.wrap {
-  border-right: 0.08em solid #fff;
+border-right: 0.08em solid #fff;
 }
 
 .wave {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
+animation-name: wave-animation;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+transform-origin: 70% 70%;
+display: inline-block;
 }
 
 @keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+0% {
+transform: rotate(0deg);
+}
+10% {
+transform: rotate(14deg);
+}
+20% {
+transform: rotate(-8deg);
+}
+30% {
+transform: rotate(14deg);
+}
+40% {
+transform: rotate(-4deg);
+}
+50% {
+transform: rotate(10deg);
+}
+60% {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(0deg);
+}
 }
 
 .pict {
-  box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
-  -webkit-box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
-  -moz-box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
+box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
+-webkit-box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
+-moz-box-shadow: 0px 0px 73px -9px rgba(112, 219, 255, 0.44);
 }
 
 .glow-blue {
-  animation: glow 1.5s infinite alternate ease-in-out;
+animation: glow 1.5s infinite alternate ease-in-out;
 }
 
 @keyframes glow {
-  from {
-    box-shadow: 0 0 10px rgba(64, 147, 255, 0.6), 0 0 15px rgba(64, 147, 255, 0.6), 0 0 20px rgba(64, 147, 255, 0.6), 0 0 25px rgba(64, 147, 255, 0.6);
-  }
-  to {
-    box-shadow: 0 0 15px rgba(64, 147, 255, 0.8), 0 0 20px rgba(64, 147, 255, 0.8), 0 0 25px rgba(64, 147, 255, 0.8), 0 0 30px rgba(64, 147, 255, 0.8);
-  }
+from {
+box-shadow: 0 0 10px rgba(64, 147, 255, 0.6), 0 0 15px rgba(64, 147, 255, 0.6), 0 0 20px rgba(64, 147, 255, 0.6), 0 0 25px rgba(64, 147, 255, 0.6);
+}
+to {
+box-shadow: 0 0 15px rgba(64, 147, 255, 0.8), 0 0 20px rgba(64, 147, 255, 0.8), 0 0 25px rgba(64, 147, 255, 0.8), 0 0 30px rgba(64, 147, 255, 0.8);
+}
 }
 
 .fadein-up {
-  opacity: 0;
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-  animation-delay: 500ms;
+opacity: 0;
+animation-name: fadeInUp;
+animation-duration: 0.8s;
+animation-fill-mode: forwards;
+animation-delay: 500ms;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+from {
+opacity: 0;
+transform: translate3d(0, 100%, 0);
+}
+to {
+opacity: 1;
+transform: translate3d(0, 0, 0);
+}
 }
 
 .fade-in-from-left {
-  opacity: 0;
-  animation: fadeInLeft 0.8s ease-out forwards;
-  animation-delay: 500ms;
+opacity: 0;
+animation: fadeInLeft 0.8s ease-out forwards;
+animation-delay: 500ms;
 }
 
 @keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+0% {
+opacity: 0;
+transform: translateX(-100%);
+}
+100% {
+opacity: 1;
+transform: translateX(0);
+}
 }
 
 .fadein-right {
-  opacity: 0;
-  animation: fadeInRight 0.8s ease-out forwards;
-  animation-delay: 500ms;
+opacity: 0;
+animation: fadeInRight 0.8s ease-out forwards;
+animation-delay: 500ms;
 }
 
 @keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+0% {
+opacity: 0;
+transform: translateX(100%);
+}
+100% {
+opacity: 1;
+transform: translateX(0);
+}
 }
 
 .fadein-bot {
-  opacity: 0;
-  animation: fadeInBot 0.8s forwards;
+opacity: 0;
+animation: fadeInBot 0.8s forwards;
 }
 
 @keyframes fadeInBot {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
+from {
+opacity: 0;
+transform: translate3d(0, -100%, 0);
   }
   to {
     opacity: 1;
