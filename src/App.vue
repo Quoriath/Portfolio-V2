@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto flex flex-col relative">
-    <nav class="fixed top-0 z-50 w-full bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg">
+    <nav class="fixed top-0 z-50 w-full bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg transition-all duration-500 ease-in-out">
       <div class="container mx-auto flex flex-wrap items-center justify-between p-5">
         <button @click="redirectToHome" class="flex items-center">
           <span class="self-center text-2xl text-green-400 font-bold">JonatanFirdausi</span>
@@ -17,22 +17,24 @@
             </svg>
           </button>
         </div>
-        <div :class="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="w-full md:flex md:items-center md:w-auto md:order-1 transition-all duration-300 ease-in-out">
-          <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 text-white">
-            <li>
-              <router-link to="/" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Home</router-link>
-            </li>
-            <li>
-              <router-link to="/about" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">About</router-link>
-            </li>
-            <li>
-              <router-link to="/portfolio" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Portfolio</router-link>
-            </li>
-            <!-- <li>
-              <router-link to="/blog" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Blog</router-link>
-            </li> -->
-          </ul>
-        </div>
+        <transition name="slide-fade">
+          <div v-show="isMenuOpen" class="w-full md:flex md:items-center md:w-auto md:order-1 transition-all duration-500 ease-in-out">
+            <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 text-white">
+              <li>
+                <router-link to="/" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Home</router-link>
+              </li>
+              <li>
+                <router-link to="/about" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">About</router-link>
+              </li>
+              <li>
+                <router-link to="/portfolio" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Portfolio</router-link>
+              </li>
+              <!-- <li>
+                <router-link to="/blog" @click="closeMenu" class="hover:text-yellow-300 transition duration-300">Blog</router-link>
+              </li> -->
+            </ul>
+          </div>
+        </transition>
       </div>
     </nav>
 
@@ -155,5 +157,14 @@ nav {
 
 nav:hover {
   background-color: #1a202c;
+}
+
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.slide-fade-enter, .slide-fade-leave-to /* .slide-fade-leave-active in <2.1.8 */ {
+  transform: translateY(-10px);
+  opacity: 0;
 }
 </style>
