@@ -17,16 +17,16 @@ export default {
           status: 'Advanced'
         },
         {
+          id: 8,
+          name: 'C#',
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png',
+          status: 'Advanced'
+        },
+        {
           id: 3,
           name: 'ReactJS',
           imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
           status: 'Intermediate'
-        },
-        {
-          id: 4,
-          name: 'VueJS',
-          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-vue-282497.png?f=webp',
-          status: 'Beginner'
         },
         {
           id: 5,
@@ -45,6 +45,12 @@ export default {
           name: 'Python',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png',
           status: 'Intermediate'
+        },
+        {
+          id: 4,
+          name: 'VueJS',
+          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-vue-282497.png?f=webp',
+          status: 'Beginner'
         }
       ],
       languages: [
@@ -58,7 +64,7 @@ export default {
           id: 2,
           name: 'English',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/197/197374.png', // Bendera Inggris
-          status: 'Fluent'
+          status: 'Intermediate'
         },
       ]
     };
@@ -87,7 +93,7 @@ export default {
           <p class="mb-3 fadein-left fadeins-2">
             &nbsp; &nbsp; &nbsp; My job is to build your website to be functional and user-friendly yet still attractive.
             In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use.
-            My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.
+            My goal is to convey             your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.
           </p>
         </div>
       </section>
@@ -149,7 +155,7 @@ export default {
                   <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
                   </div>
                   <div
-                    class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
+                  class="status-tech opacity-0 mt-2 text-[10px] text-blue-400 transition-all duration-300 md:text-xs lg:text-sm">
                     {{ item.status }}</div>
                 </div>
               </div>
@@ -265,5 +271,24 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* New styles for smoother UI */
+button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4ca1af;
+  color: white;
+}
+
+.item-tech {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-tech:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 </style>

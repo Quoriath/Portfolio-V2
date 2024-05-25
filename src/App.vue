@@ -1,13 +1,13 @@
 <template>
-  <div class="container mx-auto flex flex-col relative">
+  <div class="flex flex-col relative min-h-screen bg-gray-900 text-gray-200">
     <nav class="fixed top-0 z-50 w-full bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg">
-      <div class="container mx-auto flex flex-wrap items-center justify-between p-5">
+      <div class="w-full flex flex-wrap items-center justify-between p-5">
         <button @click="redirectToHome" class="flex items-center">
           <span class="self-center text-2xl text-green-400 font-bold">JonatanFirdausi</span>
         </button>
         <div class="flex md:order-2">
           <a href="https://github.com/Quoriath" class="ml-4">
-            <img class="w-8 h-8 hover:opacity-80 transition-opacity" src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png" alt="github">
+            <img class="w-8 h-8 rounded-full hover:opacity-80 transition-opacity" src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png" alt="github">
           </a>
         </div>
         <div class="block md:hidden">
@@ -36,7 +36,7 @@
       </div>
     </nav>
 
-    <div class="mt-20 fadein-content">
+    <div class="mt-20 fadein-content flex-grow">
       <router-view />
     </div>
   </div>
@@ -155,5 +155,39 @@ nav {
 
 nav:hover {
   background-color: #1a202c;
+}
+
+/* Additional styles for aesthetic improvements */
+body {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+nav {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+button {
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+img {
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 </style>

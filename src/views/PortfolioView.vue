@@ -85,4 +85,20 @@ img {
 img:hover {
   transform: scale(1.05);
 }
+
+h2 {
+  color: #4ade80; /* Warna hijau untuk judul */
+}
+
+p {
+  color: #a1a1aa; /* Warna abu-abu untuk paragraf */
+}
+
+a {
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #fbbf24; /* Warna kuning untuk link saat hover */
+}
 </style>
