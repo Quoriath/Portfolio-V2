@@ -1,31 +1,3 @@
-<script>
-import DOMPurify from 'dompurify';
-
-export default {
-  data() {
-    return {
-      activeTab: 1,
-      items: [
-        // {
-        //   id: 1,
-        //   name: 'Personal Website',
-        //   imageUrl: 'portfolio_v2',
-        //   description: 'My personal website, created to showcase my profile, skills, and projects. Also a place to experiment with new technologies.',
-        //   technologies: 'VueJS 3, Tailwind',
-        //   githubLink: 'https://github.com/Quoriath',
-        //   demoLink: 'https://bagasrakha.netlify.app/'
-        // }
-      ]
-    };
-  },
-  methods: {
-    sanitizeHTML(html) {
-      return DOMPurify.sanitize(html);
-    }
-  }
-}
-</script>
-
 <template>
   <div class="container mx-auto p-6 text-white">
     <article data-page="projects">
@@ -36,7 +8,7 @@ export default {
       <section>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div v-for="item in items" :key="item.id" class="project-card p-6 bg-gray-900 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 transform hover:scale-105 fadein-up">
-            <img :src="'/img/portfolio-' + item.imageUrl + '.png'" alt="Project Image" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md transition duration-300 transform hover:scale-105">
+            <img :src="getImageUrl(item.imageUrl)" alt="Project Image" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md transition duration-300 transform hover:scale-105">
             <h3 class="text-2xl font-semibold">{{ item.name }}</h3>
             <p class="text-gray-400 mt-2" v-html="sanitizeHTML(item.description)"></p>
             <p class="mt-4 text-sm text-gray-500">{{ item.technologies }}</p>
@@ -61,35 +33,56 @@ export default {
   </div>
 </template>
 
-<style scoped>
-.fadein-up {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
+<script>
+import DOMPurify from 'dompurify';
+
+export default {
+  data() {
+    return {
+      activeTab: 1,
+      items: [
+        {
+          id: 1,
+          name: 'First Portfolio Web',
+          imageUrl: 'web',
+          description: 'My personal website, created to showcase my profile, skills, and projects. Also a place to experiment with new technologies.',
+          technologies: 'HTML, CSS',
+          githubLink: 'https://github.com/Quoriath',
+          demoLink: 'https://myportfolio-old.vercel.app/'
+        }
+      ]
+    };
+  },
+  methods: {
+    sanitizeHTML(html) {
+      return DOMPurify.sanitize(html);
+    },
+    getImageUrl(imageName) {
+      return require(`@/assets/${imageName}.png`);
+    }
+  }
 }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+</script>
+
+<style>
+.container {
+  padding: 2rem;
 }
 
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, background-color 0.3s;
 }
+
 .project-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: #2d3748;
 }
 
 img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s;
 }
+
 img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 </style>
